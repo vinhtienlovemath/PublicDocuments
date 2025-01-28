@@ -1,0 +1,164 @@
+\newpage
+\section{Đề thi Đại số}
+\begin{tcolorbox}[title=\textbf{Bài toán B.1.}]
+    Cho $a$ là một số thực, $A$ là ma trận phụ thuộc vào $a$
+    $$A = \begin{pmatrix}[]{cccc}
+        1 & a+1 & a+2 & 0 \\
+        a+3 & 1 & 0 & a+2 \\
+        a+2 & 0 & 1 & a+1 \\
+        0 & a+2 & a+3 & 1 
+    \end{pmatrix}.$$
+
+    \begin{enumerate}
+        \item[(a)] Tìm hạng của ma trận $A$ khi $a = -1$.
+        \item[(b)] Tìm tất cả các số thực $a$ sao cho $A$ có định thức dương.
+        \item[(c)] Biện luận số chiều của không gian nghiệm của hệ phương trình tuyến tính $AX = 0$ theo $a$ (ở đây $X$ là vector cột ứng với các tọa độ lần lượt là $x,\,y,\,z,\,t$). 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải.}
+
+\begin{enumerate}
+    \item[(a)] {
+        Khi $a = -1$ thì 
+        \begin{align*}
+            A 
+            & = \begin{pmatrix}[]{cccc}
+                1 & 0 & 1 & 0 \\
+                2 & 1 & 0 & 1 \\
+                1 & 0 & 1 & 0 \\
+                0 & 1 & 2 & 1 
+            \end{pmatrix} \sim \begin{pmatrix}[]{cccc}
+                1 & 0 & 1 & 0 \\
+                2 & 1 & 0 & 1 \\
+                0 & 1 & 2 & 1 \\
+                1 & 0 & 1 & 0 
+            \end{pmatrix} \sim \begin{pmatrix}[]{cccc}
+                1 & 0 & 1 & 0 \\
+                0 & 1 & -2 & 1 \\
+                0 & 1 & 2 & 1 \\
+                0 & 0 & 0 & 0 
+            \end{pmatrix} \sim \begin{pmatrix}[]{cccc}
+                1 & 0 & 1 & 0 \\
+                0 & 1 & -2 & 1 \\
+                0 & 0 & 4 & 0 \\
+                0 & 0 & 0 & 0 
+            \end{pmatrix}.
+        \end{align*}
+
+        Từ đây suy ra $\text{r}(A) = 3$.
+    }
+    \item[(b)] {
+        Theo khai triển Laplace, ta có 
+
+        \begin{align*}
+            \det (A) 
+            & = \begin{vmatrix}[]{ccc}
+                1 & 0 & a+2 \\
+                0 & 1 & a+1 \\
+                a+2 & a+3 & 1 
+            \end{vmatrix} - (a+1)\begin{vmatrix}[]{ccc}
+                a+3 & 0 & a+2 \\
+                a+2 & 1 & a+1 \\
+                0 & a+3 & 1 
+            \end{vmatrix} + (a+2)\begin{vmatrix}[]{ccc}
+                a+3 & 1 & a+2 \\
+                a+2 & 0 & a+1 \\
+                0 & a+2 & 1 
+            \end{vmatrix} \allowdisplaybreaks \\ 
+            & = \left(\begin{vmatrix}[]{cc}
+                1 & a+1 \\
+                a+3 & 1 
+            \end{vmatrix} + (a+2)\begin{vmatrix}[]{cc}
+                0 & 1 \\
+                a+2 & a+3 
+            \end{vmatrix}\right) \\
+            & \quad - (a+1)\left(\begin{vmatrix}[]{cc}
+                a+3 & 0 \\
+                a+2 & 1 
+            \end{vmatrix} - (a+3)\begin{vmatrix}[]{cc}
+                a+3 & a+2 \\
+                a+2 & a+1 
+            \end{vmatrix}\right) \allowdisplaybreaks \\
+            & \quad + (a+2)\left(\begin{vmatrix}[]{cc}
+                a+3 & 1 \\
+                a+2 & 0 
+            \end{vmatrix} - (a+2)\begin{vmatrix}[]{cc}
+                a+3 & a+2 \\
+                a+2 & a+1 
+            \end{vmatrix}\right) \\   
+            & = \Big(1-(a+3)(a+1) - (a+2)^2\Big) - (a+1)(a+3) - (a+2)^2 \\ 
+            & \quad + \Big((a+1)(a+3) - (a+2)^2\Big)\begin{vmatrix}[]{cc}
+                a+3 & a+2 \\
+                a+2 & a+1 
+            \end{vmatrix} \\
+            & = -4a^2 - 16a - 13 - \begin{vmatrix}[]{cc}
+                a+3 & a+2 \\
+                a+2 & a+1 
+            \end{vmatrix} \\
+            & = -4a^2 - 16a - 12 \\
+            & = -4(a+1)(a+3).
+        \end{align*}
+
+        Như vậy $\det (A) > 0 \Leftrightarrow -4(a+1)(a+3) > 0 \Leftrightarrow -3 < a < -1$.
+    }
+    \item[(c)] {
+        Với $a = -1$, theo câu (a) ta có $\text{r}(A) = 3$ nên số chiều của không gian nghiệm bằng $4 - \text{r}(A) = 1$.
+
+        Với $a = -3$, ta có $$A = \begin{pmatrix}[]{cccc}
+            1 & -2 & -1 & 0 \\
+            0 & 1 & 0 & -1 \\
+            -1 & 0 & 1 & -2 \\
+            0 & -1 & 0 & 1 
+        \end{pmatrix} \sim \begin{pmatrix}[]{cccc}
+            1 & -2 & -1 & 0 \\
+            0 & 1 & 0 & -1 \\
+            0 & -2 & 0 & -2 \\
+            0 & 0 & 0 & 0 
+        \end{pmatrix} \sim \begin{pmatrix}[]{cccc}
+            1 & -2 & -1 & 0 \\
+            0 & 1 & 0 & -1 \\
+            0 & 0 & 0 & -4 \\
+            0 & 0 & 0 & 0 
+        \end{pmatrix},$$ từ đây suy ra $\text{r}(A) = 3$ nên số chiều của không gian nghiệm bằng $4 - \text{r}(A) = 1$.
+
+        Với $a \ne -1,\,-3$ thì $\det (A) \ne 0$ nên hệ phương trình $AX = 0$ có nghiệm duy nhất nên số chiều của không gian nghiệm bằng 0.
+    }
+\end{enumerate}
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.2.}]
+    Cho $A,\,B$ là hai ma trận vuông $$A = \begin{pmatrix}[]{cc}
+        0 & 2 \\
+        1 & 0 
+    \end{pmatrix},\,B = \begin{pmatrix}[]{cc}
+        0 & -2 \\
+        -1 & 0 
+    \end{pmatrix}.$$
+
+    \begin{enumerate}
+        \item[(a)] Tìm một ma trận thực $P$ có cấp bằng 2, sao cho $P^{-1}AP$ là ma trận đường chéo.
+        \item[(b)] Tìm một ma trận thực $R$ có cấp bằng 2, định thức bằng 1, sao cho $R^{-1}AR = B$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải.}
+
+\begin{enumerate}
+    \item[(a)] {
+        Xét ma trận $P = \begin{pmatrix}[]{cc}
+            \sqrt{2} & -\sqrt{2} \\
+            1 & 1
+        \end{pmatrix}$ có $\det (P) = 2\sqrt{2} \ne 0$ nên $P$ khả nghịch.
+        
+        Khi đó $$P^{-1} = \dfrac{1}{\det (P)} \cdot \text{adj}(P) = \dfrac{1}{2\sqrt{2}}\begin{pmatrix}[]{cc}
+            1 & \sqrt{2} \\
+            -1 & \sqrt{2} 
+        \end{pmatrix},$$ trong đó $\text{adj}(P)$ là ma trận phụ hợp của ma trận $P$. 
+
+        Kiểm tra bằng phép nhân ma trận, ta thấy $$P^{-1}AP = \begin{pmatrix}[]{cc}
+            \sqrt{2} & 0 \\
+            0 & -\sqrt{2} 
+        \end{pmatrix}$$ là ma trận đường chéo.
+    }
+    \item[(b)] {} 
+\end{enumerate}
