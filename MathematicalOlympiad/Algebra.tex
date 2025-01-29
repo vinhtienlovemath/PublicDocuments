@@ -160,5 +160,48 @@
             0 & -\sqrt{2} 
         \end{pmatrix}$$ là ma trận đường chéo.
     }
-    \item[(b)] {} 
+    \item[(b)] {
+        Xét ma trận $Q = \begin{pmatrix}[]{cc}
+            1 & -2 \\ 
+            1 & -1
+        \end{pmatrix}$ có $\det (Q) = 1 \ne 0$ nên $Q$ khả nghịch.
+        
+        Khi đó $$Q^{-1} = \dfrac{1}{\det (Q)} \cdot \text{adj}(Q) = \begin{pmatrix}[]{cc}
+            -1 & 2 \\
+            -1 & 1
+        \end{pmatrix},$$ trong đó $\text{adj}(Q)$ là ma trận phụ hợp của ma trận $Q$. 
+
+        Kiểm tra bằng phép nhân ma trận, ta thấy $$Q^{-1}AQ = \begin{pmatrix}[]{cc}
+            0 & -2 \\
+            -1 & 0 
+        \end{pmatrix} = B.$$
+    } 
 \end{enumerate}
+
+\textbf{Nhận xét. }Câu (a) là một bài toán chéo hóa ma trận cơ bản. Câu (b) giải được bằng cách đồng nhất hệ số và giải hệ phương trình. Ma trận $Q$ cần tìm có dạng tổng quát $\begin{pmatrix}[]{cc}
+    a & b \\
+    c & d 
+\end{pmatrix}$, khi đó điều kiện đầu tiên là $\det(Q) = 1$ hay $ad - bc = 1$. Ngoài ra, $Q^{-1} = \dfrac{1}{\det (Q)} \cdot \text{adj}(Q) = \text{adj}(Q) = \begin{pmatrix}[]{cc}
+    d & -b \\
+    -c & a 
+\end{pmatrix}$. Khi đó bằng phép nhân ma trận, ta có $Q^{-1}AQ = \begin{pmatrix}[]{cc}
+    2cd-ab & 2d^2-b^2 \\
+    a^2-2c^2 & ab-2cd 
+\end{pmatrix}$ nên từ đó ta phải có $$\begin{pmatrix}[]{cc}
+    2cd-ab & 2d^2-b^2 \\
+    a^2-2c^2 & ab-2cd 
+\end{pmatrix} = \begin{pmatrix}[]{cc}
+    0 & -2 \\
+    -1 & 0 
+\end{pmatrix}.$$ 
+
+Ta chọn $a,\,b,\,c,\,d$ thỏa mãn hệ phương trình $$\begin{cases}
+    ad - bc = 1 \\
+    2cd - ab = 0 \\
+    2d^2 - b^2 = -2 \\
+    a^2 - 2c^2 = -1 \\
+    ad - 2cd = 0
+\end{cases},$$
+từ đó tìm được một bộ $(a,\,b,\,c,\,d)$ thỏa mãn hệ phương trình trên là $(1,\,-2,\,1,\,-1)$.
+
+
