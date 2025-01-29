@@ -426,6 +426,21 @@ Giả sử cần tìm $x,\,y,\,z$ để $A(x,\,y,\,z) = 9$. Để ý rằng $xy+
 
 \textbf{Lời giải. }
 
+\begin{enumerate}
+    \item[(a)] {
+        Cho $x = -1$ thì có $P(-1) = 0$. Cho $x = 1$ thì có $P(1) = 0$. Cho $x = 0$ thì có $2P(0) = -P(1) = 0$ nên $P(0) = 0$. Như vậy $P(x)$ có ít nhất ba nghiệm thực là $-1,\,0,\,1$.
+    } 
+    \item[(b)] {Trước hết ta chứng minh bổ đề sau: Nếu đa thức $Q(x)$ hệ số thực thỏa mãn $Q(x) = Q(x+1)$ thì $Q(x) \equiv c$ với $c$ là hằng số.
+    
+    Thật vậy, giả sử $Q(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0\,(a_n \ne 0)$. Xét đa thức $T(x) = Q(x) - a_0$ thì ta có $T(0) = 0$. Mặt khác $T(x+1) = Q(x+1) - a_0 = Q(x) - a_0 = T(x)$ nên từ đó ta có $T(m) = T(m-1) = \ldots = T(1) = T(0) = 0$ với mọi $m$ nguyên dương nên $T(x)$ có vô số nghiệm, kéo theo $T(x) \equiv 0$. Như vậy $Q(x) \equiv a_0$ hay $Q(x) \equiv c$ với $c$ là hằng số.
+    
+    Quay trở lại bài toán, từ câu (a) $P(x)$ có ba nghiệm $-1,\,0,\,1$ nên $P(x) = x(x-1)(x+1)Q(x)$. Thay vào hệ thức ở đề bài, ta có $$(x-1)(x+1)x(x+2)Q(x+1) = (x+2)x(x-1)(x+1)Q(x) \iff Q(x+1) = Q(x).$$
+    
+    Áp dụng bổ đề vừa chứng minh, ta có $Q(x)\equiv c$ nên $P(x) \equiv cx(x-1)(x+1)$ với $c$ là hằng số thực.} 
+\end{enumerate}
+
+\textbf{Nhận xét. }Đây là một bài toán cơ bản về đa thức, sử dụng các tính chất về nghiệm của đa thức. Khi đề bài cho một hệ thức liên quan đến đa thức, một cách rất tự nhiên khi bắt tay vào làm là thế một vài giá trị đặc biệt để tìm ra tính chất nào đó của đa thức, mà ở đây là tìm ra được ba nghiệm của $P(x)$, chính là mấu chốt để giải quyết câu (b).
+
 \begin{tcolorbox}[title=\textbf{Bài toán A.5.},breakable]
     Cặp ma trận thực, vuông cùng cấp $(A,\,B)$, được gọi là \textbf{tốt} nếu cả hai đều khả nghịch và thỏa mãn $AB-BA = B^2A$.
     \begin{enumerate}
