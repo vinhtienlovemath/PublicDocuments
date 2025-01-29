@@ -126,6 +126,8 @@
     }
 \end{enumerate}
 
+\textbf{Nhận xét. }Đây là một bài toán cơ bản về ma trận. Câu (a) và (b) yêu cầu các tính toán cơ bản về định thức và hạng của ma trận. Câu (c) liên quan đến tính chất số chiều của không gian nghiệm của phương trình thuần nhất bằng số ẩn tự do, bằng với số hàng toàn 0 khi đưa ma trận hệ số về ma trận bậc thang, và bằng hiệu giữa số ẩn và hạng của ma trận hệ số.
+
 \begin{tcolorbox}[title=\textbf{Bài toán B.2.}]
     Cho $A,\,B$ là hai ma trận vuông $$A = \begin{pmatrix}[]{cc}
         0 & 2 \\
@@ -204,7 +206,7 @@ Ta chọn $a,\,b,\,c,\,d$ thỏa mãn hệ phương trình $$\begin{cases}
 \end{cases},$$
 từ đó tìm được một bộ $(a,\,b,\,c,\,d)$ thỏa mãn hệ phương trình trên là $(1,\,-2,\,1,\,-1)$.
 
-\begin{tcolorbox}[title=\textbf{Bài toán},breakable]
+\begin{tcolorbox}[title=\textbf{Bài toán B.3.},breakable]
     Có 200 con muỗi trong một căn hộ gồm 4 phòng với hệ thống cửa nối các phòng như hình vẽ.
 
     \begin{center}
@@ -341,3 +343,96 @@ Tính số muỗi của từng phòng sau $x$ phút, tức cần tính $$\begin{
 \end{pmatrix} = \cdots = A^x\begin{pmatrix}[]{c}
     a_{0} \\ b_{0} \\ c_{0} \\ d_{0}
 \end{pmatrix},$$ đến đây quy về việc tính lũy thừa ma trận $A^x$ là xong.
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.4.},breakable]
+    \begin{enumerate}
+        \item[(a)] {Có bao nhiêu cách chọn ra 3 viên gạch, mỗi viên từ một hàng trong hình sau đây, sao cho không có hai viên gạch nào được lấy ra nằm kề nhau (hai viên gạch được gọi là kề nhau nếu có chung một phần của một cạnh)?
+        
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{Figures/02.png}
+        \end{center}}
+        \item[(b)] {Có bao nhiêu cách chọn ra 3 viên gạch, mỗi viên từ một hàng trong hình sau đây, sao cho không có hai viên gạch nào được lấy ra nằm kề nhau?
+        
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{Figures/03.png}
+        \end{center}}
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.5.},breakable]
+    Với $x,\,y,\,z$ là các số thực, đặt 
+    $$A(x,\,y,\,z) = \det \begin{pmatrix}[]{ccc}
+        x & y & z \\
+        y & z & x \\
+        z & x & y
+    \end{pmatrix}$$
+    \begin{enumerate}
+        \item[(a)] {Tìm một không gian con $V$ của $\mathbb{R}^3$ với $\dim (V) = 2$ thỏa mãn $A(x,\,y,\,z)=0$ với mọi $(x,\,y,\,z) \in V$. Tìm một cơ sở của không gian $V$ vừa tìm được.}
+        \item[(b)] {Tồn tại hay không các số nguyên $x,\,y,\,z$ sao cho $A(x,\,y,\,z) = 24$?}
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{enumerate}
+    \item[(a)] {Theo khai triển Laplace, ta có 
+    \begin{align*}
+        A(x,\,y,\,z) 
+        & = x\begin{vmatrix}[]{cc}
+            z & x \\
+            x & y
+        \end{vmatrix} - y\begin{vmatrix}[]{cc}
+            y & x \\
+            z & y
+        \end{vmatrix} + z\begin{vmatrix}[]{cc}
+            y & z \\
+            z & x
+        \end{vmatrix} \\
+        & = x(yz - x^2) - y(y^2 - zx) + z(xy - z^2) \\
+        & = 3xyz - (x^3+y^3+z^3) \\
+        & = (x + y + z)(xy + yz + zx - x^2 - y^2 - z^2).
+    \end{align*}
+
+    Ta có $$A(x,\,y,\,z) = 0 \iff \left[\begin{matrix}[]{l}
+        x + y + z = 0 \\ xy + yz + zx - x^2 - y^2 - z^2 = 0
+    \end{matrix} \right.$$
+
+    Nhận xét rằng $xy + yz + zx - x^2 - y^2 - z^2 = 0\iff (x-y)^2 + (y-z)^2 + (z-x)^2 = 0 \iff x = y = z$ nên để không gian con $V$ cần tìm có $\dim(V) = 2$ thì $V$ là không gian nghiệm của phương trình $x + y + z = 0$. Phương trình có nghiệm tổng quát $(x,\,y,\,z) = (-y-z,\,y,\,z) = y(-1,\,1,\,0) + z(-1,\,0,\,1)$ với mọi $y,\,z \in \mathbb{R}$ nên $V$ có một cơ sở là $\left\{(-1,\,1,\,0),\,(-1,\,0,\,1)\right\}$.
+    }
+    \item[(b)] {Giả sử tồn tại các số nguyên $x,\,y,\,z$ thỏa mãn $A(x,\,y,\,z) = 24$ hay 
+    \begin{align*}
+        & (x + y + z)(xy + yz + zx - x^2 - y^2 - z^2) = 24 \\
+        \iff & (x + y + z)\left(3(xy+yz+zx) - (x+y+z)^2\right) = 24 \\
+        \iff & 3(x+y+z)(xy+yz+zx) - (x+y+z)^3 = 24.
+    \end{align*}
+
+    Vì 24 chia hết cho 3 nên vế trái cũng phải chia hết cho 3, kéo theo $(x+y+z)^3$ phải chia hết cho 3 hay $x+y+z$ chia hết cho 3. Khi đó $3(xy+yz+zx)-(x+y+z)^2$ chia hết cho 3, kéo theo $(x + y + z)\left(3(xy+yz+zx) - (x+y+z)^2\right)$ chia hết cho 9. Như vậy 24 cũng phải chia hết cho 9, thế nhưng đây là điều mâu thuẫn. Vậy điều giả sử là sai, hay không tồn tại $x,\,y,\,z$ để $A(x,\,y,\,z) = 24$.
+    }
+\end{enumerate}
+
+\textbf{Nhận xét. }Mấu chốt trong bài toán này là tìm ra được đẳng thức $x^3 + y^3 + z^3 - 3xyz = (x+y+z)(x^2+y^2+z^2-xy-yz-zx)$. Đến đây nếu đã vững tính chất về không gian vector thì câu (a) được giải quyết gọn gàng. Câu (b) liên quan tới tính chia hết của số nguyên, mấu chốt là biến đổi $x^2+y^2+z^2-xy-yz-zx = (x+y+z)^2 - 3(xy+yz+zx)$ và nhận xét được $x+y+z$ chia hết cho 3. Nếu thay số 24 bởi một bội của 9, thì quy về giải phương trình nghiệm nguyên, bằng cách tách số ở vế phải thành tích của 2 số nguyên. 
+
+Giả sử cần tìm $x,\,y,\,z$ để $A(x,\,y,\,z) = 9$. Để ý rằng $xy+yz+zx-x^2-y^2-z^2 = -\dfrac{1}{2}\left((x-y)^2 + (y-z)^2 + (z-x)^2\right) < 0$ và tương tự trên ta có được $x+y+z$ chia hết cho 3 nên ta chỉ xét trường hợp $x+y+z = xy+yz+zx-x^2-y^2-z^2 = -3$. Từ đây $3(xy+yz+zx)-(x+y+z)^2 = -3$ nên tính được $xy+yz+zx = 2$. Không mất tính tổng quát, giả sử $x$ là số nhỏ nhất trong ba số (trường hợp nếu $x+y+z > 0$ thì giả sử $x$ là số lớn nhất). Khi đó $x < 0$, vì nếu $x \leq 0$ thì $x + y + z \leq 0$ mâu thuẫn với $x + y + z = -3 < 0$. Như vậy ta đã thu hẹp được tập giá trị của $x$, đến đây xét từng giá trị $x$. Ứng với mỗi giá trị của $x$, từ $x + y + z = -3$ tính được $y + z$; từ $x(y+z) + yz=2$ tính được $yz$, từ đó tính được $xyz$. Khi có được $x+y+z,\,xy+yz+zx,\,xyz$ thì áp dụng Viete đảo để tìm $x,\,y,\,z$.
+
+\begin{tcolorbox}[title=\textbf{Bài toán A.3.},breakable]
+    Cho $P(x)$ là một đa thức với hệ số thực thỏa mãn $(x-1)P(x+1) = (x+2)P(x)$.
+    \begin{enumerate}
+        \item[(a)] {Chứng minh rằng $P(x)$ có ít nhất ba nghiệm thực phân biệt.}
+        \item[(b)] {Tìm tất cả các đa thức $P(x)$ với hệ số thực thỏa mãn điều kiện trên.}
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{tcolorbox}[title=\textbf{Bài toán A.5.},breakable]
+    Cặp ma trận thực, vuông cùng cấp $(A,\,B)$, được gọi là \textbf{tốt} nếu cả hai đều khả nghịch và thỏa mãn $AB-BA = B^2A$.
+    \begin{enumerate}
+        \item[(a)] {Chứng minh rằng nếu $(A,\,B)$ là một cặp ma trận tốt thì $$B = A^{-1}(B^2+B)A.$$}
+        \item[(b)] {Tìm một cặp ma trận tốt $(A,\,B)$ với cấp của mỗi ma trận đều bằng 2.}
+        \item[(c)] {Tìm tất cả các số nguyên dương $n$ sao cho tồn tại ít nhất một cặp ma trận tốt $(A,\,B)$ với cấp của mỗi ma trận đều bằng $n$.} 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
