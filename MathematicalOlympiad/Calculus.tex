@@ -115,7 +115,18 @@ khi đó $\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ là đạo hàm 
 
 \textbf{Lời giải. }
 
-
+\begin{enumerate}
+    \item[(a)] {Xét phương trình hoành độ giao điểm $$3x^2 = 2x - 1 \iff 3x^2 - 2x + 1 = 0.$$
+    
+    Phương trình trên là phương trình bậc hai có $\Delta = (-2)^2 - 4\cdot 3 \cdot 1 = -8 < 0$ nên không có nghiệm thực. Như vậy $(d)$ và $(P)$ không cắt nhau.}
+    \item[(b)] {Gọi $m,\,n$ lần lượt là hoành độ của $M,\,N$. Vì $M\in (P)$ và $N \in (d)$ nên ta có $M\left(m;\,3m^2\right)$ và $N\left(n;\,2n-1\right)$. Khi đó $$MN = \sqrt{(m-n)^2 + (3m^2 - 2n + 1)^2}.$$
+    
+    Xét hàm số (theo biến $n$) $$f(n) = (m-n)^2 + (3m^2 - 2n + 1)^2 = 5n^2 - (12m^2+2m+4)n + 9m^4 + 7m^2 + 1.$$
+    
+    Vì $f$ là hàm số bậc hai theo biến $n$ nên $f$ đạt cực tiểu tại $n = \dfrac{6m^2+m+2}{5}$, khi đó $$f\left(\dfrac{6m^2+m+2}{5}\right) = \dfrac{9}{5}m^4 - \dfrac{12}{5}m^3 + 2m^2 - \dfrac{4}{5}m + \dfrac{1}{5}.$$
+    
+    Nhận xét rằng $\dfrac{9}{5}m^4 - \dfrac{12}{5}m^3 + 2m^2 - \dfrac{4}{5}m + \dfrac{1}{5} = \left(m - \dfrac{1}{3}\right)^2\left(\dfrac{9}{5}m^2 - \dfrac{6}{5}m + 1\right) + \dfrac{4}{45} = \left(m - \dfrac{1}{3}\right)^2\left(\dfrac{1}{5}(3m - 1)^2 + \dfrac{4}{5}\right) + \dfrac{4}{45} \geq \dfrac{4}{45}$ với mọi $m$. Suy ra $MN^2$ đạt giá trị nhỏ nhất bằng $\dfrac{4}{45}$ khi $m = \dfrac{1}{3}$ và $n = \dfrac{6m^2+m+2}{5} = \dfrac{3}{5}$. Như vậy $MN$ đạt giá trị nhỏ nhất bằng $\dfrac{2\sqrt{5}}{15}$ khi $M\left(\dfrac{1}{3};\,\dfrac{1}{3}\right)$ và $N\left(\dfrac{3}{5};\,\dfrac{1}{5}\right)$.}
+\end{enumerate}
 
 \begin{tcolorbox}[title=\textbf{Bài toán B.4.},breakable]
     Cho $f:\,[0;\,1] \to \mathbb{R}$ là một hàm số liên tục trên $[0;\,1]$ và khả vi trong $(0;\,1)$.
