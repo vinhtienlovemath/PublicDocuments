@@ -142,6 +142,14 @@ khi đó $\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ là đạo hàm 
 
 \textbf{Lời giải. }
 
+\begin{enumerate}
+    \item[(c)] {Ta sẽ chỉ ra rằng tồn tại hàm số thỏa mãn $|f(x)| \geq 2024|f'(x)|\text{ với mọi }x \in (0;\,1)$ và $f(1) \ne 0$ nhưng $f$ không là hàm hằng.
+    
+    Xét hàm số $f(x) = {\rm e}^{x/2024}$ trên $[0;\,1]$. Ta có $f'(x) = \dfrac{{\rm e}^{x/2024}}{2024}$. Ta thấy $f(x) > 0,\,f'(x) > 0$ và $$|f(x)| = f(x) = 2024f'(x) = 2024|f'(x)|\text{ với mọi }x \in [0;\,1]$$ nhưng $f$ không là hàm hằng.} 
+\end{enumerate}
+
+\textbf{Nhận xét. }Đây là một bài toán tổng hợp về hàm số, đòi hỏi vận dụng linh hoạt các tính chất liên tục, khả vi, bị chặn cùng với các định lý trung bình. Ở câu (c), ta thử tìm ra phản ví dụ cho bài toán, tức chỉ ra rằng tồn tại hàm số thỏa mãn $|f(x)| \geq 2024|f'(x)|\text{ với mọi }x \in (0;\,1)$ và $f(1) \ne 0$ nhưng $f$ không là hàm hằng. Khi đó, để đơn giản thì ta sẽ thử tìm hàm số thỏa mãn $f(x) = 2024f'(x) \iff \dfrac{f'(x)}{f(x)} = \dfrac{1}{2024} \iff \displaystyle\int\dfrac{f'(x)}{f(x)}\mathrm{d}x = \displaystyle\int\dfrac{\mathrm{d}x}{2024} \iff \ln f(x) = \dfrac{x}{2024} \iff f(x) = {\rm e}^{x/2024}$. 
+
 \begin{tcolorbox}[title=\textbf{Bài toán B.5.},breakable]
     Cho $D$ là một phần của mặt phẳng tọa độ $Oxy$ gồm những điểm có tọa độ $(x;\,y)$ mà $$0 \leq x \leq \dfrac{\pi}{2}$$ và $$0 \leq y \leq \dfrac{(\cos x)^4}{(\sin x)^4 + (\cos x)^4}\text{ với }0 \leq x \leq \dfrac{\pi}{2}.$$
     \begin{center}
@@ -209,6 +217,7 @@ khi đó $\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ là đạo hàm 
 \end{tcolorbox}
 
 \textbf{Lời giải. }
+
 
 \begin{tcolorbox}[title=\textbf{Bài toán A.5.},breakable]
     Cho $f:\,[0;\,+\infty) \to \mathbb{R}$ là một hàm số khả vi sao cho giới hạn $$\lim\limits_{x \to +\infty} \int\displaylimits_{0}^{x}f^2(t)dt$$ tồn tại và hữu hạn.
