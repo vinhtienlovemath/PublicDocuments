@@ -34,6 +34,8 @@
     \item[(c)] {Theo câu (b), ta có $\lim\limits_{n\to +\infty}a_n = \dfrac{1}{{\rm e}}$ là một số vô tỷ.} 
 \end{enumerate}
 
+\textbf{Nhận xét. }Đây là một bài toán giới hạn dãy số liên quan giới hạn của chuỗi số. Câu (a) là một câu cơ bản, đòi hỏi việc tính toán một số giá trị đầu của dãy số và kỹ năng chứng minh quy nạp. Câu (b) có thể tách dãy số đã cho làm hai dãy con chẵn và lẻ, từ đó sử dụng định nghĩa để chứng minh; cách giải đề xuất ở đây có phần gọn hơn, nhưng đòi hỏi phải nhận xét được dãy số đã cho liên quan đến khai triển Maclaurin của hàm $f(x) = {\rm e}^{-x}$. Tuy nhiên cách giải được đề xuất ở đây lại hiệu quả trong việc chỉ ra chính xác giới hạn của dãy $(a_n)$ là $\dfrac{1}{{\rm e}}$.
+
 \begin{tcolorbox}[title=\textbf{Bài toán B.2 + A.2.},breakable]
     Cho $f:\,\mathbb{R} \to \mathbb{R}$ là hàm số được xác định bởi công thức $$f(x) = \begin{cases}
         ax^2+b,\quad &\text{nếu $x \leq 0$} \\
@@ -48,6 +50,58 @@
 
 \textbf{Lời giải. }
 
+\begin{enumerate}
+    \item[(a)] {Với $x \leq 0$ thì $f(x) = ax^2 + b$, còn với $x > 0$ thì $f(x) = {\rm e}^x + cx$ nên $f$ liên tục tại mọi điểm khác 0. Do đó để $f$ liên tục trên $\mathbb{R}$ thì $f$ cần phải liên tục tại $0$.
+        
+    Ta có $$\lim\limits_{x \to 0^-}f(x) = \lim\limits_{x \to 0^-} (ax^2 + b) = b,\quad \lim\limits_{x \to 0^+}f(x) = \lim\limits_{x \to 0^+}({\rm e}^x + cx) = 1 = f(0).$$ 
+    
+    Để $f$ liên tục tại $0$ thì $\lim\limits_{x \to 0^-}f(x) = \lim\limits_{x \to 0^+}f(x) = f(0)$ hay $b = 1$. Như vậy khi $b = 1$ và $a,\,c$ tùy ý thì $f$ liên tục trên $\mathbb{R}$.}
+    \item[(b)] {Nhận xét rằng $f$ khả vi tại mọi điểm khác 0. Do đó để $f$ khả vi trên $\mathbb{R}$ thì $f$ cần phải khả vi tại 0. Điều này tương đương với $$\begin{cases}
+        \text{$f$ liên tục tại 0} \\
+        \text{$\lim\limits_{x \to 0}\dfrac{f(x) - f(0)}{x}$ tồn tại}
+    \end{cases}.$$
+    
+    Theo câu $(a)$, để $f$ liên tục tại 0 thì $b = 1$. 
+    
+    Ta có $$\lim\limits_{x \to 0^-}\dfrac{f(x) - f(0)}{x} = \lim\limits_{x \to 0^-}\dfrac{ax^2 + b - b}{x} = \lim\limits_{x \to 0^-}ax = 0$$ và $$\lim\limits_{x \to 0^+}\dfrac{f(x) - f(0)}{x} = \lim\limits_{x \to 0^+}\dfrac{{\rm e}^x + cx - 1}{x} = c + 1,$$ để ý rằng $\lim\limits_{x \to 0^+} \dfrac{{\rm e}^x-1}{x} = \lim\limits_{x \to 0^+} \dfrac{{\rm e}^x}{1} = 1$ theo quy tắc l'Hospital.
+    
+    Do đó để $\lim\limits_{x \to 0}\dfrac{f(x) - f(0)}{x}$ tồn tại thì $\lim\limits_{x \to 0^-}\dfrac{f(x) - f(0)}{x} = \lim\limits_{x \to 0^+}\dfrac{f(x) - f(0)}{x}$ hay $c = -1$. Như vậy, khi $b = 1,\,c = -1$ và $a$ tùy ý thì $f$ khả vi trên $\mathbb{R}$.}
+    \item[(c)] {Để $f$ khả vi cấp hai trên $\mathbb{R}$ thì trước hết $f$ phải khả vi cấp một trên $\mathbb{R}$. Theo câu (b), để $f$ khả vi cấp một trên $\mathbb{R}$ thì $b = 1,\,c = -1$ và khi đó $$f'(x) = \begin{cases}
+        2ax,\quad &\text{nếu $x \leq 0$} \\
+        {\rm e}^x - 1,\quad &\text{nếu $x > 0$} \\
+        \lim\limits_{x \to 0}\dfrac{f(x) - f(0)}{x} = 0,\quad &\text{nếu $x = 0$} 
+    \end{cases}$$
+        
+    Nhận xét rằng $f$ khả vi cấp hai tại mọi điểm khác 0. Do đó để $f$ khả vi cấp hai trên $\mathbb{R}$ thì $f$ cần phải khả vi cấp hai tại 0. Điều này tương đương với $$\begin{cases}
+        \text{$f'$ liên tục tại 0} \\
+        \text{$\lim\limits_{x \to 0}\dfrac{f'(x) - f'(0)}{x}$ tồn tại}
+    \end{cases}.$$
+    
+    Ta có $$\lim\limits_{x \to 0^-}f'(x) = \lim\limits_{x \to 0^-} (2ax) = 0,\quad \lim\limits_{x \to 0^+}f'(x) = \lim\limits_{x \to 0^+} ({\rm e}^x -1) = 0 = f'(0).$$
+    
+    Vì $\lim\limits_{x \to 0^-}f'(x) = \lim\limits_{x \to 0^+}f'(x) = f'(0)$ nên $f'$ liên tục tại 0.
+    
+    Ta lại có $$\lim\limits_{x \to 0^-}\dfrac{f'(x)-f'(0)}{x} = \lim\limits_{x \to 0^-}\dfrac{2ax}{x} = 2a$$ và $$\lim\limits_{x \to 0^+}\dfrac{f'(x)-f'(0)}{x} = \lim\limits_{x \to 0^+}\dfrac{{\rm e}^x - 1}{x} = 1.$$
+    
+    Do đó để $\lim\limits_{x \to 0}\dfrac{f'(x) - f'(0)}{x}$ tồn tại thì $\lim\limits_{x \to 0^-}\dfrac{f'(x) - f'(0)}{x} = \lim\limits_{x \to 0^+}\dfrac{f'(x) - f'(0)}{x}$ hay $a = \dfrac{1}{2}$. Như vậy, khi $a = \dfrac{1}{2},\,b = 1,\,c = -1$ thì $f$ khả vi cấp hai trên $\mathbb{R}$.}
+\end{enumerate}
+
+\textbf{Nhận xét. }Đây là một bài toán cơ bản về tính liên tục và khả vi của hàm số. Để giải quyết bài toán này đòi hỏi phải nắm vững tính chất về tính liên tục và tính khả vi.
+
+Để hàm số $f$ liên tục tại điểm $x = x_0$ thì $f$ phải thỏa mãn đồng thời ba điều kiện 
+\begin{enumerate}
+    \item[(i)] {$f$ xác định tại $x_0$;}
+    \item[(ii)] {$\lim\limits_{x\to x_0}f(x)$ tồn tại;}
+    \item[(iii)] {$\lim\limits_{x\to x_0}f(x) = f(x_0)$.}
+\end{enumerate}
+
+Còn để hàm số $f$ khả vi tại điểm $x = x_0$ thì $f$ phải thỏa mãn đồng thời hai điều kiện 
+\begin{enumerate}
+    \item[(i)] {$f$ liên tục tại điểm $x = x_0$;}
+    \item[(ii)] {$\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ tồn tại.}
+\end{enumerate}
+khi đó $\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ là đạo hàm của hàm số $f$ tại điểm $x = x_0$ hay $f'(x_0)$.
+
 \begin{tcolorbox}[title=\textbf{Bài toán B.3 + A.3.},breakable]
     Hình vẽ bên thể hiện một phần đường thẳng $(d)$ có phương trình $$y = 2x - 1$$ và một phần parabol $(P)$ có phương trình $$y = 3x^2$$ trong mặt phẳng tọa độ $Oxy$.
     \begin{center}
@@ -60,6 +114,8 @@
 \end{tcolorbox}
 
 \textbf{Lời giải. }
+
+
 
 \begin{tcolorbox}[title=\textbf{Bài toán B.4.},breakable]
     Cho $f:\,[0;\,1] \to \mathbb{R}$ là một hàm số liên tục trên $[0;\,1]$ và khả vi trong $(0;\,1)$.
