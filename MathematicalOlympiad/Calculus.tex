@@ -1,0 +1,87 @@
+\newpage
+\section{Đề thi Giải tích}
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.1 + A.1.},breakable]
+    Cho $(a_n)$ là dãy số thực được xác định bởi các điều kiện $$a_1 = 1,\quad a_{n+1} = a_n + \dfrac{(-1)^n}{n!} \,\forall n \geq 1.$$
+    \begin{enumerate}
+        \item[(a)] {Tìm tất cả các số nguyên dương $n$ sao cho $a_n \geq \dfrac{1}{2}$.}
+        \item[(b)] {Chứng minh rằng dãy số $(a_n)$ hội tụ.} 
+        \item[(c)] Giới hạn của dãy số $(a_n)$ là một số hữu tỷ hay vô tỷ? Vì sao? 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{enumerate}
+    \item[(a)] {Bằng tính toán, ta có $a_1 = 1,\,a_2 = 0,\,a_3 = \dfrac{1}{2},\,a_4 = \dfrac{1}{3},\,a_5 = \dfrac{3}{8}$. Ta sẽ chứng minh rằng $a_n < \dfrac{1}{2}$ với mọi $n > 3$. 
+    
+    Thật vậy, mệnh đề cần chứng minh đúng với $n = 4$ và $n = 5$. Giả sử mệnh đề đúng đến $n = 2k$ và $n = 2k + 1$ (trong đó $k \in \mathbb{Z^+}$), tức đã có $a_{2k} < \dfrac{1}{2}$ và $a_{2k+1} < \dfrac{1}{2}$. Ta có $$a_{2k + 2} = a_{2k+1} - \dfrac{1}{(2k + 1)!} < \dfrac{1}{2}$$ và $$a_{2k+3} = a_{2k+2} + \dfrac{1}{(2k+2)!} = a_{2k+1} - \dfrac{1}{(2k+1)!}+ \dfrac{1}{(2k+2)!} = a_{2k+1} - \dfrac{2k}{(2k+2)!} < \dfrac{1}{2}.$$
+    
+    Như vậy theo nguyên lý quy nạp toán học, $a_n < \dfrac{1}{2}$ với mọi $n > 3$. Do đó tất cả các số nguyên dương $n$ thỏa mãn $a_n \geq \dfrac{1}{2}$ là 1 và 3.} 
+    \item[(b)] {Với mọi $n\geq 2$ ta có $$a_n = a_{n-1} + \dfrac{(-1)^{n-1}}{(n-1)!} = a_{n-2} + \dfrac{(-1)^{n-1}}{(n-1)!} + \dfrac{(-1)^{n-2}}{(n-2)!} = \cdots = a_1 + \sum\limits_{i = 1}^{n-1}\dfrac{(-1)^{i}}{i!} = 1 + \sum\limits_{i = 1}^{n-1}\dfrac{(-1)^{i}}{i!}.$$
+    
+    Xét hàm số $f(x) = {\rm e}^{-x}$. Ta thấy $$f^{(n)}(x) = \begin{cases}
+        -{\rm e}^{-x},\quad &\text{nếu $n$ lẻ} \\
+        {\rm e}^{-x},\quad &\text{nếu $n$ chẵn}  
+    \end{cases},$$ trong đó $f^{(n)}(x)$ là đạo hàm cấp $n$ của hàm số $f$. Theo khai triển Maclaurin, ta có $$f(x) = 1 + \dfrac{-1}{1!}x + \dfrac{1}{2!}x^2 + \cdots + \dfrac{(-1)^{n-1}}{(n-1)^n}x^{n-1} + \dfrac{(-1)^n \cdot {\rm e}^{-c}}{n!}x^n,$$
+    trong đó $c$ là số thực nào đó nằm giữa 0 và $x$.
+    
+    Từ đây suy ra $$\dfrac{1}{{\rm e}} = f(1)  = 1 + \dfrac{-1}{1!} + \dfrac{1}{2!} + \cdots + \dfrac{(-1)^{n-1}}{(n-1)^n} + \dfrac{(-1)^n \cdot {\rm e}^{-c}}{n!}= a_n + \dfrac{(-1)^n \cdot {\rm e}^{-c}}{n!},$$ với $c$ là số thực nào đó thỏa mãn $0 < c < 1$, với mọi $n \geq 2$.
+    
+    Do đó với mọi $n \geq 2$ thì $$\left|a_n - \dfrac{1}{{\rm e}}\right| = \dfrac{{\rm e}^{-c}}{n!}, $$ với $c$ là số thực nào đó thỏa mãn $0 < c < 1$.
+    
+    Trong đẳng thức trên, cho $n \to +\infty$, để ý rằng $\dfrac{{\rm e}^{-c}}{n!} \to 0$, ta thu được $\lim\limits_{n\to +\infty}a_n = \dfrac{1}{{\rm e}}$. Như vậy dãy số $(a_n)$ hội tụ.} 
+    \item[(c)] {Theo câu (b), ta có $\lim\limits_{n\to +\infty}a_n = \dfrac{1}{{\rm e}}$ là một số vô tỷ.} 
+\end{enumerate}
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.2 + A.2.},breakable]
+    Cho $f:\,\mathbb{R} \to \mathbb{R}$ là hàm số được xác định bởi công thức $$f(x) = \begin{cases}
+        ax^2+b,\quad &\text{nếu $x \leq 0$} \\
+        {\rm e}^x + cx,\quad &\text{nếu $x > 0$}  
+    \end{cases},$$trong đó $a,\,b,\,c$ là các tham số thực.
+    \begin{enumerate}
+        \item[(a)] {Xác định $a,\,b,\,c$ sao cho hàm $f$ liên tục trên $\mathbb{R}$.}
+        \item[(b)] {Xác định $a,\,b,\,c$ sao cho hàm $f$ khả vi trên $\mathbb{R}$.} 
+        \item[(c)] {Xác định $a,\,b,\,c$ sao cho hàm $f$ khả vi cấp hai trên $\mathbb{R}$.} 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.3 + A.3.},breakable]
+    Hình vẽ bên thể hiện một phần đường thẳng $(d)$ có phương trình $$y = 2x - 1$$ và một phần parabol $(P)$ có phương trình $$y = 3x^2$$ trong mặt phẳng tọa độ $Oxy$.
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{Figures/04.png}
+    \end{center}
+    \begin{enumerate}
+        \item[(a)] {Đường thẳng $(d)$ và parabol $(P)$ có cắt nhau không? Vì sao?}
+        \item[(b)] {Cho các điểm $M \in (P)$ và $N\in (d)$. Tìm giá trị nhỏ nhất của khoảng cách $MN$.} 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.4.},breakable]
+    Cho $f:\,[0;\,1] \to \mathbb{R}$ là một hàm số liên tục trên $[0;\,1]$ và khả vi trong $(0;\,1)$.
+
+    \begin{enumerate}
+        \item[(a)] {Chứng minh rằng nếu $f(1) = 0$ thì tồn tại một số thực $x_0 \in (0;\,1)$ sao cho $$|f(x_0)| \leq 2024|f'(x_0)|.$$}
+        \item[(b)] {Chứng minh rằng nếu $f(1) = 0$ và $$|f(x)| \geq 2024|f'(x)|\text{ với mọi }x \in (0;\,1)$$ thì $f$ là hàm hằng.}
+        \item[(c)] {Khẳng định trong ý (b) có còn đúng không nếu ta không giả thiết $f(1) = 0$ (nếu câu trả lời là "có", hãy chứng minh; nếu câu trả lời là "không", hãy chỉ ra ví dụ về một hàm số $f$)?}  
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
+
+\begin{tcolorbox}[title=\textbf{Bài toán B.5.},breakable]
+    Cho $D$ là một phần của mặt phẳng tọa độ $Oxy$ gồm những điểm có tọa độ $(x;\,y)$ mà $$0 \leq x \leq \dfrac{\pi}{2}$$ và $$0 \leq y \leq \dfrac{(\cos x)^4}{(\sin x)^4 + (\cos x)^4}\text{ với }0 \leq x \leq \dfrac{\pi}{2}.$$
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{Figures/05.png}
+    \end{center}
+    \begin{enumerate}
+        \item[(a)] {Tính diện tích của $D$.}
+        \item[(b)] {Cho $(d)$ là một đường thẳng đi qua hai điểm $\left(\dfrac{\pi}{4};\,\dfrac{1}{2}\right)$ và $(0;\,a)$ với $0 < a < 1$. Người ta muốn cắt $D$ dọc theo $(d)$ để thu được hai phần rời nhau có cùng diện tích (hình vẽ trong bài thể hiện một cách cắt dọc theo đường nét đứt). Coi việc cắt không làm ảnh hưởng đến diện tích của $D$. Xác định giá trị của $a$ tương ứng với một cách cắt thỏa mãn yêu cầu.} 
+    \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Lời giải. }
