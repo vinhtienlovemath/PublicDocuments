@@ -351,7 +351,7 @@ Tính số muỗi của từng phòng sau $x$ phút, tức cần tính $$\begin{
         \begin{center}
             \includegraphics[width=0.6\textwidth]{Figures/02.png}
         \end{center}}
-        \item[(b)] {Có bao nhiêu cách chọn ra 3 viên gạch, mỗi viên từ một hàng trong hình sau đây, sao cho không có hai viên gạch nào được lấy ra nằm kề nhau?
+        \item[(b)] {Có bao nhiêu cách chọn ra 4 viên gạch, mỗi viên từ một hàng trong hình sau đây, sao cho không có hai viên gạch nào được lấy ra nằm kề nhau?
         
         \begin{center}
             \includegraphics[width=0.6\textwidth]{Figures/03.png}
@@ -360,6 +360,31 @@ Tính số muỗi của từng phòng sau $x$ phút, tức cần tính $$\begin{
 \end{tcolorbox}
 
 \textbf{Lời giải. }
+
+Ta sẽ giải bài toán tổng quát với $n$ hàng gạch. Đánh số các hàng gạch từ trên xuống dưới tương ứng với từ 1 đến $n$. Ký hiệu $a_{ij}$ là viên gạch thứ $j$ ở hàng $i$ (tính từ trái qua phải). 
+        
+Theo giả thiết, ta cần tính số dãy $$a_{1j_1}a_{2j_2}a_{3j_3}\ldots a_{nj_n}$$ được xây dựng thỏa mãn với hai phần tử kề nhau trong dãy thì hai viên gạch tương ứng trong bảng gạch không kề nhau (trong phần lập luận bên dưới, khi nói đến xây dựng dãy các viên gạch, thì dãy được xây dựng phải thỏa mãn tính chất này). 
+
+Ta xây dựng dãy nói trên bằng cách thêm lần lượt các viên gạch ở hàng $n,\,n-1,\,n-2,\,\ldots,\,1$ vào dãy. Gọi $s_{ij}$ là số các dãy gạch xây dựng từ hàng $i$ về hàng $1$, trong đó viên gạch ở hàng $i$ là viên gạch $a_{ij}$, khi đó số các dãy cần tìm trong đề bài bằng $\displaystyle\sum\limits_{j}s_{nj}$. Gọi $a_{(i-1)j_1},\,a_{(i-1)j_2},\,\ldots,\,a_{(i-1)j_k}$ là các viên gạch ở hàng $(i-1)$ không kề với viên gạch $a_{ij}$. Theo cách gọi ở trên, có $s_{(i-1)j_1},\,s_{(i-1)j_2},\,\ldots,\,s_{(i-1)j_k}$ số các dãy gạch xây dựng từ hàng 1 đến hàng $i-1$, trong đó viên gạch ở hàng $i-1$ lần lượt là viên gạch $a_{(i-1)j_1},\,a_{(i-1)j_2},\,\ldots,\,a_{(i-1)j_k}$. Như vậy có tất cả $\displaystyle\sum\limits s_{(i-1)j_\ell}$ dãy gạch xây dựng từ hàng 1 đến hàng $i-1$ mà các viên gạch $a_{(i-1)j_\ell}$ trong các dãy này thì không kề với viên gạch $a_{ij}$. Việc chọn viên gạch $a_{ij}$ để tạo thành dãy gạch từ hàng 1 đến hàng $i$ có 1 cách, do đó theo quy tắc nhân thì sẽ có tất cả $\displaystyle\sum\limits s_{(i-1)j_\ell}$ dãy gạch từ hàng 1 đến hàng $i$ thỏa mãn điều kiện đề.
+
+Ta điền số $s_{ij}$ vào các viên gạch $a_{ij}$. Khi đó, theo lập luận ở trên, ta thấy rằng các viên gạch ở hàng 1 đều được điền số 1, mỗi viên gạch ở hàng dưới thì bằng tổng các số trong các viên gạch hàng trên mà không kề với nó, và tổng số cách chọn cần tìm là tổng các số ở hàng gạch cuối cùng.
+
+\begin{enumerate}
+    \item[(a)] {
+        Các viên gạch sau khi đã điền các số $s_{ij}$ vào như sau 
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{Figures/07.png}
+        \end{center}
+        Như vậy số cách chọn thỏa mãn đề bài là $13+10+10+10+9 = 52$ cách.
+    }
+    \item[(a)] {
+        Các viên gạch sau khi đã điền các số $s_{ij}$ vào như sau 
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{Figures/08.png}
+        \end{center}
+        Như vậy số cách chọn thỏa mãn đề bài là $43+33+32+32+29=169$ cách.
+    }
+\end{enumerate}
 
 \begin{tcolorbox}[title=\textbf{Bài toán B.5 + A.4.},breakable]
     Với $x,\,y,\,z$ là các số thực, đặt 
