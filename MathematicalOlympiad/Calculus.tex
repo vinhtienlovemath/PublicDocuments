@@ -289,6 +289,8 @@ khi đó $\lim\limits_{x\to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}$ là đạo hàm 
 
 \textbf{Nhận xét. }Câu (b) của bài toán nếu xét hàm $f(x) = \sin x$ thì việc giải quyết sẽ đơn giản hơn nhiều, tuy nhiên tác giả muốn thử thách hơn bằng việc tìm một hàm khác hàm lượng giác. Vì hàm cần tìm phải thỏa $|f''(x)| \leq 1$ nên nếu chọn hàm thỏa $|f(x)| \leq 1$ thì khả năng điều kiện trên cũng thỏa, nên sẽ thử chọn hàm $f$ có dạng $\dfrac{1}{g(x)}$. Lúc này thử chọn $g(x)$ là một đại lượng điều hòa $x + \dfrac{1}{x}$, tức khi đó $f(x) = \dfrac{1}{x + \dfrac{1}{x}} = \dfrac{x}{x^2 + 1}$ thì may mắn $|f''(x)| \leq 2$ và tồn tại $x_0$ để $\left(f'(x_0)\right)^2 > 2024|f(x_0)|$. Lúc này chỉ việc nhân thêm $\dfrac{1}{2}$ vào $f(x)$ để $|f''(x)| \leq 1$ là xong.
 
+Ngoài ra, ở câu (b) ta cũng có thể chọn hàm đa thức thỏa mãn $f''(x) = 1$ với mọi $x$, tức $f'(x) = x + c_1$ và $f(x) = \dfrac{x^2}{2} + c_1x + c_2$. Khi đó cần chọn $c_1,\,c_2$ để tồn tại $x_0$ thỏa mãn $(f'(x_0))^2 > 2024|f(x_0)| \iff x_0^2 + 2c_1x_0 + c_1^2 > 2024\left|\dfrac{x_0^2}{2} + c_1x_0 + c_2\right|$. Giả sử chọn $x_0 = 0$ thì cần chọn $c_1,\,c_2$ thỏa mãn $c_1^2 > 2024|c_2|$. Đến đây thấy ngay một cặp $(c_1,\,c_2) = (1,\,0)$ thỏa mãn. Điều đó có nghĩa là $f(x) = \dfrac{x^2}{2} + x$ cũng là một ví dụ hàm $f$ trong câu (b). Việc tìm ra hàm số này là khả thi hơn trong điều kiện phòng thi, so với hàm số trong lời giải trên.
+
 \begin{tcolorbox}[title=\textbf{Bài toán A.5.},breakable]
     Cho $f:\,[0;\,+\infty) \to \mathbb{R}$ là một hàm số khả vi sao cho giới hạn $$\lim\limits_{x \to +\infty} \int\displaylimits_{0}^{x}f^2(t)\mathrm{d}t$$ tồn tại và hữu hạn.
 
