@@ -7,7 +7,11 @@
 \addbibresource{references.bib}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd, fancyhdr, color, comment, graphicx, environ}
 \usepackage{mathtools}
-\usepackage{hyperref}
+\usepackage[
+  bookmarksopen,
+  bookmarksdepth=2,
+  breaklinks=true
+]{hyperref}
 \usepackage{float}
 \usepackage{lastpage}
 \usepackage[dvipsnames]{xcolor}
@@ -21,7 +25,6 @@
 \usepackage{sectsty}
 \usepackage{thmtools}
 \usepackage{shadethm}
-\usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{footnote}
 \usepackage{nicematrix}
@@ -263,5 +266,6 @@
 \setlength\parindent{0pt}
 \setlist{nolistsep}
 \def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+\usepackage{breakurl}
 %%%%%%%%%%%%%%%%%%%%
 
